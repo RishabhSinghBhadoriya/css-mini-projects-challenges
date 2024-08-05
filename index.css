@@ -1,0 +1,44 @@
+html,body{
+    background-color: rgb(50, 42, 42);
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.button-border{
+    background: linear-gradient(115deg,#eeaf61,#fb9062,#ee5d6c,#ce4993,#6a0d83);
+    padding: 2px;
+}
+.button{
+    border: none;
+    background: rgb(50, 42, 42);
+    color: white;
+    padding: 1em 1.5em;
+    letter-spacing: 0.1em;
+}
+.button-border:hover{
+    background: linear-gradient(230deg,#eeaf61,#fb9062,#ee5d6c,#ce4993,#6a0d83);
+}
+.button-border:hover .button{
+    padding: 1.1em 1.6em;
+}
+.search-bar-container{
+    display: flex;
+    justify-content: center;
+}
+.search-bar{
+    width: 30%; 
+    line-height: 2;
+    border-radius: 4px;
+    border: 3px solid black;
+    transition: all 0.3s;
+}
+.search-bar:focus{
+    width: 60%;
+    border: 3px solid aquamarine;
+}
+.search-bar::placeholder{
+    font-weight: 200;
+}
