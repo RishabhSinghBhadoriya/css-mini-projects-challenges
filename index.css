@@ -39,6 +39,70 @@ html,body{
     width: 60%;
     border: 3px solid aquamarine;
 }
+.search-bar:hover{
+    border: 3px solid aquamarine;
+}
 .search-bar::placeholder{
     font-weight: 200;
+}
+.loading-container{
+    position: absolute;
+    display: flex;
+    top: 70%;
+    left: 45%;
+    justify-content: center;
+    align-items: center;
+}
+.circle{
+    height: 1.5rem;
+    width: 1.5rem;
+    background: white;
+    margin: 0.5rem;
+    border-radius: 50%;
+    animation: pulse infinite alternate 1s;
+}
+@keyframes pulse {
+    from{
+        background: white;
+    }
+    to{
+        background: gray;
+        height: 1.6em;
+        width: 1.6em;
+    }
+}
+.word{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    top: 40%;
+    left: 40%;
+    color: whitesmoke;
+}
+h1:after{
+    content: "";
+    animation: 8s swap infinite;
+    background: #04c2f7;
+    color: white;
+    border-radius: 4px;
+    margin-left: 4px;
+    padding: 0.3rem;
+}
+@keyframes swap {
+    0%{
+        content: "CSS";
+    }
+    25%{
+        content: "JS";
+    }
+    50%{
+        content: "Flexbox";
+    }
+    75%{
+        content: "HTML";
+    }
+    100%{
+        content: "website";
+    }
 }
