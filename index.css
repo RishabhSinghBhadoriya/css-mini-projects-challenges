@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Oleo+Script:wght@400;700&display=swap');
 html,body{
     background-color: rgb(50, 42, 42);
 }
@@ -111,18 +112,15 @@ h1:after{
     position: absolute;
     top: 20%;
     left: 5%;
-    height: 200px;
-    width: 350px;
+    height: 300px;
+    width: 400px;
     display: flex;
     justify-content: center;
     text-align: center;
-    color: #04c2f7;
-    transition: transform 4s;
+    color: white;
+    background-color: #04c2f7;
+    transition: transform 0.6s;
     transform-style: preserve-3d;
-}
-.card-front{
-    height: inherit;
-    width: inherit;
     border-radius: 10px;
 }
 .card-back{
@@ -137,4 +135,89 @@ h1:after{
 .flash-card:hover .card-back{
     display: block;
     transform: rotateY(180deg);
+}
+.card-front,.card-back{
+    backface-visibility: hidden;
 } 
+.spin-load{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.loader{
+    width: 100px;
+    height: 100px;
+    border: 1em solid gray;
+    border-radius: 50%;
+    border-top: 1em solid #ce4993;
+    animation: spin 1.5s linear infinite;
+}
+@keyframes spin{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.insta{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Oleo Script", system-ui;
+    font-weight: 400;
+    color: whitesmoke;
+}
+.stories-menu{
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    max-width: 320px;
+    margin: 2em auto;
+}
+.imgwrap{
+    height: 60px;
+    width: 60px;
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+.story{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    color: whitesmoke;
+    font-family: "Inconsolata", monospace;
+}
+img{
+    height: inherit;
+    width: inherit;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+.new > .imgwrap{
+    background: linear-gradient(to top right,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+}
+.viewed > .imgwrap{
+    background: gray;
+}
+.live::after{
+    content: "LIVE";
+    font-size: 0.5em;
+    font-weight: bold;
+    background: #d62929;
+    border: 2px solid black;
+    color: whitesmoke;
+    border-radius: 2px;
+    width: 20px;
+    padding: 2px 4px;
+    position: absolute;
+    top: 50%;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
