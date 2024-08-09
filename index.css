@@ -221,3 +221,32 @@ img{
     left: 0;
     right: 0;
 }
+
+.prog-contain{
+    width: 80%;
+    margin: 3em auto;
+}
+.progress-bar{
+    height: 1.5em;
+    border-radius: 20px;
+    background: rgba(236, 235, 235, 0.813);
+}
+.progress-status{
+    width: 25%;
+    background: #04c2f7;
+    animation: 6s linear showprogress infinite;
+}
+@keyframes showprogress {
+    50%{
+        width: 50%;
+        background: #4f5bd5;
+        background: #962fbf;
+    }
+    75%{
+        width: 75%
+    }
+    100%{
+        width: 100%;
+        background: #05ef38;
+    }
+}
