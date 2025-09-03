@@ -25,6 +25,8 @@ html,body{
 .button-border:hover .button{
     padding: 1.1em 1.6em;
 }
+
+/* CSS search bar */
 .search-bar-container{
     display: flex;
     justify-content: center;
@@ -47,6 +49,8 @@ html,body{
 .search-bar::placeholder{
     font-weight: 200;
 }
+
+/* CSS loading animation */
 .loading-container{
     position: absolute;
     display: flex;
@@ -73,6 +77,8 @@ html,body{
         width: 1.6em;
     }
 }
+
+/* CSS word carousel */
 .word{
     position: absolute;
     display: flex;
@@ -108,6 +114,8 @@ html,body{
         content: "website";
     }
 }
+
+/* CSS flash card */
 .flash-card{
     position: absolute;
     top: 20%;
@@ -139,6 +147,8 @@ html,body{
 .card-front,.card-back{
     backface-visibility: hidden;
 } 
+
+/* CSS spinner loading animation */
 .spin-load{
     display: flex;
     justify-content: center;
@@ -158,6 +168,8 @@ html,body{
         transform: rotate(360deg);
     }
 }
+
+/* CSS instagram stories menu */
 .insta{
     position: relative;
     display: flex;
@@ -222,6 +234,7 @@ img{
     right: 0;
 }
 
+/* CSS animated progress bar */
 .prog-contain{
     width: 80%;
     margin: 3em auto;
@@ -250,6 +263,8 @@ img{
         background: #05ef38;
     }
 }
+
+/* CSS github contribution graph */
 .graph > ul {
     padding-left: 0;
     list-style: none;
@@ -277,8 +292,13 @@ img{
 [data-value="10"]{
     background: #05ef38;
 }
+@media (max-width: 768px) {   /* phones */
+  .graph {
+    grid-template-columns: repeat(13, minmax(8px, 1fr)); /* 13 cols → 4 rows */
+  }
+}
 
-
+/* CSS text-shadows */
 .text-shadows
 h1,
 h2,
@@ -346,4 +366,65 @@ text-shadow:x-axis y-axis blur color*/
 .head3 :nth-child(7n) , .head3 :nth-child(11n) {
     --text: #FF9C55;
     --shadow: #FF5555;
+}
+@media (max-width: 768px) {
+    .head3 > h1{
+        font-size: 4rem;
+        padding-left: 4px;
+    }
+}
+
+/* CSS split fractured effect */
+.split-text{
+    height: 100%;
+    width: 100%;
+    /* background-color:  #e2cea7; */
+    /* background: radial-gradient(circle 700px at bottom right,
+                #dec89e 0%, #dec89e 15%,
+                #e5d3af 15%, #e5d3af 30%,
+                #e2cea7 30%, #e2cea7 45%,
+                #ded0b2 45%, #e2ca99 60%,
+                #e6cc9a 60%, #e6cc9a 75%,
+                #e7ce9c 75%, #e7ce9c 100%); */
+    background: radial-gradient(circle 500px at 100% 100%,
+                #e8d4ad 0%, #e8d4ad 15%,
+                #e2cea7 15%, #e2cea7 30%,
+                #e5d1aa 30%, #e5d1aa 45%,
+                #e2cea7 45%, #e2cea7 60%,
+                #dfcaa4 60%, #dfcaa4 75%,
+                #e2cea7 75%, #e2cea7 90%,
+                #e6d2ab 90%, #e6d2ab 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    font-family: "Mozilla Text", sans-serif;
+}
+.split-text h1{
+    font-size: calc(10vw + 0.5rem);
+    text-transform: uppercase;
+    position: relative;
+    background: linear-gradient(transparent 50%, #000 50%);
+	-webkit-background-clip: text;
+    background-clip:text;
+	-webkit-text-fill-color: transparent;
+}
+.split-text h1::after{
+    content: attr(data-head);
+    position: absolute;
+    left: 0;
+    transform: translate(0,-2px);
+    background: linear-gradient(#000 50%, transparent 50%);
+	-webkit-background-clip: text;
+    background-clip:text;
+	-webkit-text-fill-color: transparent;
+    animation: split 5s infinite ease;
+}
+@keyframes split {
+    0%{
+        transform: translate(0,-2px);
+    }
+    50%{
+        transform: translate(-20px,-2px);
+    }   
 }
